@@ -21,7 +21,6 @@ function Home() {
   const [activeTab, setActiveTab] = useState('Umrah');
   const [language, setLanguage] = useState('English');
   const [packages, setPackages] = useState([]);
-  const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,32 +35,6 @@ function Home() {
   const [contactMsg, setContactMsg] = useState('');
 
   useEffect(() => {
-    const verifyAdminRole = async () => {
-      const token = localStorage.getItem('token');
-      if (!token) return;
-
-      // 🟢 DEMO admin 
-      if (token === 'demo-admin-token-12345') {
-        setIsAdmin(true);
-        return; 
-      }
-        // demode admin find ses
-        //live mode suru 
-      /*
-      try {
-        const response = await fetch('http://localhost:5000/api/auth/verify-admin', {
-          headers: { 'Authorization': `Bearer ${token}` }
-        });
-        if (response.ok) {
-          const data = await response.json();
-          if (data.isAdmin) setIsAdmin(true);
-        }
-      } catch (error) { 
-        console.log("Admin verification error (Live mode offline)"); 
-      }
-      */
-    };
-
     const fetchPackages = async () => {
 
       // demo mode
@@ -88,8 +61,6 @@ function Home() {
       }
       */
     };
-
-    verifyAdminRole();
     fetchPackages();
   }, []);
 
@@ -159,14 +130,6 @@ function Home() {
             <li><Link to="/packages" onClick={toggleMenu}>{t.packagesMenu}</Link></li>
             <li><a href="#contact-section" onClick={toggleMenu}>{t.contact}</a></li>
           </ul>
-
-          <div className="nav-actions">
-             {isAdmin ? (
-               <Link to="/admin" className="login-btn" style={{background: '#074a35', color: '#fff'}} onClick={toggleMenu}>{t.adminPanel}</Link>
-             ) : (
-               <Link to="/login" className="login-btn" onClick={toggleMenu}>{t.login}</Link>
-             )}
-          </div>
         </div>
       </nav>
 
