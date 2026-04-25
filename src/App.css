@@ -459,3 +459,17 @@ footer {
     padding: 40px 5%;
   }
 }
+.btn-gold {
+  background: linear-gradient(135deg, #d4af37, #f9d976, #b8860b);
+  color: #000;
+  padding: 14px 24px;
+  border-radius: 8px;
+  margin: 10px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.btn-gold:hover {
+  transform: scale(1.05);
+}
