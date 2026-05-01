@@ -588,3 +588,128 @@ footer {
   border-top: 2px solid var(--gold-solid);
   color: var(--sheen-green);
 }
+.premium-journey-section {
+  padding: 80px 5%;
+  background: linear-gradient(180deg, #f8faf9 0%, #ffffff 100%);
+}
+
+.premium-journey-title {
+  color: var(--sheen-green);
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 12px;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.premium-journey-subtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 1.05rem;
+}
+
+.premium-block {
+  max-width: 1150px;
+  margin: 0 auto 50px;
+  display: flex;
+  gap: 45px;
+  align-items: center;
+  background: rgba(255,255,255,0.9);
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  border: 1px solid rgba(212,175,55,0.45);
+  overflow: hidden;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.premium-block:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 75px rgba(0,0,0,0.16);
+  transition: 0.35s ease;
+}
+
+.premium-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.premium-text h3 {
+  color: var(--sheen-green);
+  font-size: 2.25rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.premium-text p {
+  color: #555;
+  line-height: 1.9;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+.premium-points {
+  display: grid;
+  gap: 14px;
+}
+
+.premium-points span {
+  color: var(--sheen-green);
+  font-weight: 700;
+  background: #f8faf9;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border-left: 4px solid var(--gold-solid);
+  animation: slideIn 0.8s ease forwards;
+}
+
+.premium-image-wrap {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.premium-image-wrap img {
+  width: 100%;
+  max-height: 620px;
+  object-fit: contain;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(7,74,53,0.25);
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .premium-block {
+    padding: 24px;
+    gap: 25px;
+  }
+
+  .premium-text h3 {
+    font-size: 1.8rem;
+  }
+
+  .premium-block:nth-child(3) {
+    flex-direction: column-reverse;
+  }
+}

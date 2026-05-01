@@ -176,75 +176,65 @@ function Home() {
         </form>
       </section>
 
-      <section style={{ padding: '70px 5% 50px', textAlign: 'center' }}>
-        <h2 style={{ color: 'var(--sheen-green)', fontSize: '2rem', marginBottom: '12px' }}>
-          Experience Our Premium Journey
-        </h2>
+     <section className="premium-journey-section">
+  <h2 className="premium-journey-title">Experience Our Premium Journey</h2>
 
-        <p style={{ color: '#666', marginBottom: '35px' }}>
-          Download our app for a smoother and more spiritual travel experience.
-        </p>
+  <p className="premium-journey-subtitle">
+    Download our app for a smoother and more spiritual travel experience.
+  </p>
 
-        <div
-          style={{
-            maxWidth: '850px',
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '28px',
-            alignItems: 'start'
-          }}
-        >
-          {[image1, image2].map((img, index) => (
-            <div
-              key={index}
-              className="animated-card"
-              style={{
-                background: '#fff',
-                borderRadius: '18px',
-                overflow: 'hidden',
-                boxShadow: '0 15px 35px rgba(0,0,0,0.15)',
-                border: '1px solid rgba(212,175,55,0.35)',
-                padding: '10px'
-              }}
-            >
-              <img
-                src={img}
-                alt={`App Preview ${index + 1}`}
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  objectFit: 'contain',
-                  display: 'block',
-                  borderRadius: '12px'
-                }}
-              />
-            </div>
-          ))}
-        </div>
+  <div className="premium-block">
+    <div className="premium-image-wrap">
+      <img src={image1} alt="Sheen International App" />
+    </div>
 
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '20px',
-            flexWrap: 'wrap',
-            marginTop: '35px'
-          }}
-        >
-          <button
-            className="search-btn"
-            onClick={() => window.open('https://play.google.com', '_blank')}
-            style={{
-              width: '220px',
-              borderRadius: '30px',
-              padding: '15px 25px'
-            }}
-          >
-            📱 Download App
-          </button>
-        </div>
-      </section>
+    <div className="premium-text">
+      <h3>Your Trusted Partner for Blessed Journeys</h3>
+
+      <p>
+        Sheen International provides carefully planned Umrah, Haj, Ziyarat and tour packages with comfort, trust and complete travel guidance.
+      </p>
+
+      <div className="premium-points">
+        <span>✔ Premium Umrah & Haj packages</span>
+        <span>✔ Hotel, transport and travel assistance</span>
+        <span>✔ Support for families and groups</span>
+        <span>✔ Simple booking and trusted service</span>
+      </div>
+    </div>
+  </div>
+
+  <div className="premium-block">
+    <div className="premium-text">
+      <h3>A Comfortable Journey, Made With Care</h3>
+
+      <p>
+        We make your spiritual journey calm, organized and stress-free, so you can focus on your ibadah while we manage the travel needs.
+      </p>
+
+      <div className="premium-points">
+        <span>✔ Smooth journey planning</span>
+        <span>✔ Comfortable stay options</span>
+        <span>✔ Guidance for first-time travellers</span>
+        <span>✔ Peaceful and reliable experience</span>
+      </div>
+    </div>
+
+    <div className="premium-image-wrap">
+      <img src={image2} alt="Comfortable Journey" />
+    </div>
+  </div>
+
+  <div style={{ display: 'flex', justifyContent: 'center', marginTop: '35px' }}>
+    <button
+      className="search-btn"
+      onClick={() => window.open('https://play.google.com', '_blank')}
+      style={{ width: '220px', borderRadius: '30px', padding: '15px 25px' }}
+    >
+      📱 Download App
+    </button>
+  </div>
+</section>
 
       <section id="packages-section" className="packages-section">
         <h2 style={{ color: 'var(--sheen-green)', fontSize: '2rem', marginBottom: '10px' }}>
