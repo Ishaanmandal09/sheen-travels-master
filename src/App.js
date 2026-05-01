@@ -6,6 +6,7 @@ import PackagesPage from './pages/PackagesPage';
 import PackageDetails from './pages/PackageDetails';
 import BookingPage from './pages/BookingPage';
 import MyBookings from './pages/MyBookings';
+import DeleteMyData from './pages/DeleteMyData';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/package/:id" element={<PackageDetails />} />
           <Route path="/book/:id" element={<BookingPage />} />
           <Route path="/my-bookings" element={<MyBookings />} />
+          <Route path="/delete-my-data" element={<DeleteMyData />} />
         </Routes>
       </div>
     </Router>

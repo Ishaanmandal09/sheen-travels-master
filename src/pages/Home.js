@@ -8,14 +8,12 @@ import medinaImg from '../medina.jpg';
 
 import image1 from './image1.png';
 import image2 from './image2.png';
-import image3 from './image3.png';
-import image4 from './image4.png';
 
 const fallbackPackages = [
   { _id: '1', title: 'Premium Umrah 2026', type: 'Umrah', price: '110000', duration: '15 Days / 14 Nights', img: meccaImg },
   { _id: '2', title: 'Economy Umrah Package', type: 'Umrah', price: '75000', duration: '14 Days', img: medinaImg },
-  { _id: '3', title: 'Haj Deluxe Package', type: 'Haj', price: '350000', duration: '40 Days', img: image3 },
-  { _id: '4', title: 'Baghdad Ziyarat Special', type: 'Ziyarat', price: '65000', duration: '10 Days', img: image4 },
+  { _id: '3', title: 'Haj Deluxe Package', type: 'Haj', price: '350000', duration: '40 Days', img: medinaImg },
+  { _id: '4', title: 'Baghdad Ziyarat Special', type: 'Ziyarat', price: '65000', duration: '10 Days', img: meccaImg },
   { _id: '5', title: 'Ajmer Sharif Ziyarat', type: 'Ziyarat', price: '25000', duration: '5 Days', img: image1 },
   { _id: '6', title: 'Ramadan Special Umrah', type: 'Umrah', price: '145000', duration: '20 Days', img: medinaImg },
   { _id: '7', title: 'Short Haj Package', type: 'Haj', price: '280000', duration: '20 Days', img: meccaImg }
@@ -131,6 +129,7 @@ function Home() {
             <li><a href="#home" onClick={toggleMenu}>{t.home}</a></li>
             <li><Link to="/packages" onClick={toggleMenu}>{t.packagesMenu}</Link></li>
             <li><a href="#contact-section" onClick={toggleMenu}>{t.contact}</a></li>
+            <li><Link to="/delete-my-data" onClick={toggleMenu}>Delete My Data</Link></li>
           </ul>
         </div>
       </nav>
@@ -188,19 +187,20 @@ function Home() {
 
         <div
           style={{
-            maxWidth: '1200px',
+            maxWidth: '850px',
             margin: '0 auto',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '28px',
             alignItems: 'start'
           }}
         >
-          {[image1, image2, image3, image4].map((img, index) => (
+          {[image1, image2].map((img, index) => (
             <div
               key={index}
+              className="animated-card"
               style={{
-                background: '#0b2a1f',
+                background: '#fff',
                 borderRadius: '18px',
                 overflow: 'hidden',
                 boxShadow: '0 15px 35px rgba(0,0,0,0.15)',
@@ -242,18 +242,6 @@ function Home() {
             }}
           >
             📱 Download App
-          </button>
-
-          <button
-            className="login-btn"
-            onClick={() => window.open('/app-download', '_blank')}
-            style={{
-              width: '220px',
-              borderRadius: '30px',
-              padding: '15px 25px'
-            }}
-          >
-            🌐 Web Download
           </button>
         </div>
       </section>
@@ -327,6 +315,7 @@ function Home() {
           }}
         >
           <div style={{ flex: '1', minWidth: '250px' }}>
+            <img src={logo} alt="Sheen International" style={{ height: '70px', marginBottom: '10px' }} />
             <h2 style={{ color: 'var(--sheen-green)', marginBottom: '15px' }}>SHEEN INTERNATIONAL</h2>
             <p style={{ marginBottom: '15px', color: '#555', lineHeight: '1.6' }}>
               Your trusted partner for blessed journeys. We provide premium, hassle-free Umrah, Haj, and Ziyarat packages from India.
@@ -334,6 +323,16 @@ function Home() {
             <p style={{ fontWeight: 'bold', color: 'var(--sheen-green)' }}>📍 Barasat, Kolkata, West Bengal</p>
             <p style={{ fontWeight: 'bold', color: 'var(--sheen-green)', marginTop: '10px' }}>📞 +91 93033-78692</p>
             <p style={{ fontWeight: 'bold', color: 'var(--sheen-green)', marginTop: '10px' }}>✉️ contact@sheeninternational.com</p>
+          </div>
+
+          <div style={{ flex: '1', minWidth: '220px' }}>
+            <h3 style={{ color: 'var(--gold-solid)', marginBottom: '20px' }}>Quick Links</h3>
+            <ul style={{ listStyle: 'none', padding: 0, lineHeight: '2.2' }}>
+              <li><Link to="/" style={{ color: '#555', textDecoration: 'none' }}>Home</Link></li>
+              <li><Link to="/packages" style={{ color: '#555', textDecoration: 'none' }}>Packages</Link></li>
+              <li><Link to="/my-bookings" style={{ color: '#555', textDecoration: 'none' }}>My Bookings</Link></li>
+              <li><Link to="/delete-my-data" style={{ color: '#555', textDecoration: 'none' }}>Delete My Data</Link></li>
+            </ul>
           </div>
 
           <div style={{ flex: '1.5', minWidth: '300px', background: '#f8faf9', padding: '20px', borderRadius: '10px', boxShadow: '0 5px 15px rgba(0,0,0,0.05)', boxSizing: 'border-box' }}>
